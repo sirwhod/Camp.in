@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-base: #afb6c2;
+  --text-title: #d4ccb6;
+  --background: #191816;
+  --form-background: #24221f;
+  --primary-color: #ffc632;
+  --secundary-color: #d19600;
+  --checkbox-check: #473404;
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-base);
+
+  font-family: 'Poppins', 'Roboto';
+
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+#header {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+}
+
+#header .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#header .content h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  color: color(--text-base);
+}
+
+#header .content .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#header .content .title h1 {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+
+  color: var(--text-title);
+}
+
+#form {
+  margin-top: 2.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#form .labelinput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#form .labelinput label {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+
+  color: var(--text-base);
+}
+
+#form .labelinput .inputIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem;
+  border: 1px solid var(--text-base);
+  border-radius: 0.4rem;
+}
+
+#form .labelinput .inputIcons input {
+  flex-grow: 1;
+  background-color: var(--background);
+  border: none;
+  color: var(--text-base);
+  height: 100%;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+
+  padding-left: 0.5rem;
+}
+
+#form .labelinput .inputIcons input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+#form .labelinput .inputIcons:focus-within,
+#form .labelinput .inputIcons:active,
+#form .labelinput .inputIcons:hover {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 1px #ffde88;
+}
+
+#form .labelinput .inputIcons:focus-within svg path,
+#form .labelinput .inputIcons:active svg path,
+#form .labelinput .inputIcons:hover svg path {
+  stroke: var(--primary-color);
+}
+
+#form .checkboxAndPass {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Checkboxes */
+#form .checkboxAndPass .checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+#form .checkboxAndPass .checkbox input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+#form .checkboxAndPass .checkbox label {
+  position: relative;
+  padding-left: 2.2em;
+  display: inline-block;
+}
+#form .checkboxAndPass .checkbox label::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 1.5em;
+  width: 1.5em;
+  background: var(--background);
+  margin-right: 0.5em;
+  border: 1px solid #999;
+  border-radius: .4rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+#form .checkboxAndPass .checkbox label::after {
+  content: '\2714';
+  position: absolute;
+  top: 50%;
+  left: 0.75em;
+  transform: translate(-50%, -50%);
+  font-size: 1em;
+  color: var(--checkbox-check);
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+#form .checkboxAndPass .checkbox label:focus::before,
+#form .checkboxAndPass .checkbox label:hover::before {
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+}
+#form .checkboxAndPass .checkbox input:checked + label::before {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+#form .checkboxAndPass .checkbox input:checked + label::after {
+  opacity: 1;
+}
+
+#form .checkboxAndPass a {
+  text-decoration: none;
+  color: var(--primary-color);
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+
+#form .buttonSend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+#form .buttonSend .button {
+  width: 100%;
+  padding-block: 1.2rem;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 4px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+
+  color: var(--checkbox-check);
+
+  cursor: pointer;
+}
+
+#form .buttonSend .button:hover {
+  background: var(--secundary-color);
+  color: var(--background)
+}
+
+#form .buttonSend a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
