@@ -8,6 +8,7 @@
   --text-base: #afb6c2;
   --text-title: #d4ccb6;
   --background: #191816;
+  --background-login: #24221f;
   --form-background: #24221f;
   --primary-color: #ffc632;
   --secundary-color: #d19600;
@@ -35,17 +36,15 @@ body {
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
-
-  gap: 3rem;
 }
 
-#header .content {
+.content {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
-#header .content h3 {
+.content h3 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
@@ -54,7 +53,7 @@ body {
   color: color(--text-base);
 }
 
-#header .content .title {
+.content .title {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -62,7 +61,7 @@ body {
   gap: 1rem;
 }
 
-#header .content .title h1 {
+.content .title h1 {
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
@@ -174,7 +173,7 @@ body {
   background: var(--background);
   margin-right: 0.5em;
   border: 1px solid #999;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
   position: absolute;
@@ -247,10 +246,66 @@ body {
 
 #form .buttonSend .button:hover {
   background: var(--secundary-color);
-  color: var(--background)
+  color: var(--background);
 }
 
 #form .buttonSend a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+#sideImage {
+  visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .wrapper {
+    max-width: 57.2rem;
+    margin-inline: auto;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: auto;
+    margin-right: 7.4rem;
+    margin-block: auto;
+
+    border-radius: 0.4rem;
+    padding: 5.5rem 11.8rem;
+    background-color: var(--background-login);
+  }
+
+  main .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #form .labelinput .inputIcons input {
+    background-color: var(--background-login);
+  }
+
+  #sideImage {
+    visibility: visible;
+    min-width: 50vw;
+    object-fit: cover;
+  }
+
+  #form .checkboxAndPass .checkbox label::before {
+    background: (--background-login);
+  }
+
+  #form .buttonSend .button:hover {
+    color: var(--background-login);
+  }
 }
